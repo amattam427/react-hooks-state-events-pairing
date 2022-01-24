@@ -1,7 +1,13 @@
+import React from 'react'
 import video from "../data/video.js";
+import Header  from './Header.js';
+import Buttons from './Buttons.js';
+
 
 function App() {
-  console.log("Here's your data:", video);
+  //console.log("Here's your data:", video);
+  console.log(video.comments)
+
 
   return (
     <div className="App">
@@ -13,6 +19,9 @@ function App() {
         allowFullScreen
         title="Thinking in React"
       />
+      <Header title = {video.title} views = {video.views} created = {video.createdAt}/>
+     
+      <Buttons video={video} />
     </div>
   );
 }
